@@ -1,8 +1,38 @@
+@font-face {
+  font-family: "Rasal";
+  src: url(../src/assets/font/RASCAL__.TTF);
+}
+
 @import "tailwindcss";
 
+button {
+  cursor: pointer;
+}
 
+li, span {
+  font-family: "Rasal", sans-serif;
+}
 
-  button {
-    cursor:  pointer;
+@layer utilities {
+  .animate-shake {
+    animation: shake 1s ease-in-out infinite;
+    -webkit-animation: shake 1s ease-in-out infinite;
+}
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
   }
-
+  25% {
+    transform: translateX(-3px);
+  }
+  75% {
+    transform: translateX(3px);
+  }
+}
