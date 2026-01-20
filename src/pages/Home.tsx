@@ -3,10 +3,16 @@ import ContactLogo from "../assets/contact.svg";
 import LinkinLogo from "../assets/Linkin.svg";
 import MusicLogo from "../assets/music.svg";
 import BlogLogo from "../assets/blog.svg";
-import { useState } from "react";
+import React, { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import CursorDot from "../assets/dot.png";
+import { useNavigate } from "react-router-dom";
 
-const Home = () => {
+
+
+
+const Home: React.FC = () => {
+  const navigate = useNavigate();
   const [isPlaying, setIsPlaying] = useState(false);
   const handleClick = () => {
     setIsPlaying(true);
@@ -18,35 +24,53 @@ const Home = () => {
   const toggleSidebar = () => setIsOpen(!isOpen);
 
   return (
-    <div className="grid grid-cols-3 gap-14 min-h-screen bg-[url('/src/assets/bg.svg')] bg-cover bg-center">
+    <div style={{
+        cursor: `url(${CursorDot}), auto`,
+      } }
+    className="grid grid-cols-3 gap-14 min-h-screen bg-[url('/src/assets/bg.svg')] bg-cover bg-center">
       <div>
         <div className="flex flex-col items-end justify-evenly gap-50 pt-20">
-          <div className="text-center">
+          <div className="text-center  animate-shake">
             <img
               src={ContactLogo}
               alt=""
-              className="w-40 h-40 hover:scale-[1.1] duration-300  animate-shake"
+              className="w-40 h-40 hover:scale-[1.1] duration-300"
             />
-            <span className="text-3xl font-bold  bg-[url('https://i.pinimg.com/736x/48/66/08/48660831b6bedf3e1e1b6103409197b0.jpg')] bg-blur-sm rounded-full">contact</span>
+            <span className="text-3xl font-bold  bg-[url('https://i.pinimg.com/736x/48/66/08/48660831b6bedf3e1e1b6103409197b0.jpg')] bg-blur-sm rounded-full">
+              contact
+            </span>
           </div>
-          <div className="text-center">
+          <div className="text-center animate-shake">
             <img
               src={GithubLogo}
               alt=""
-              className="w-40 h-40 hover:scale-[1.1] duration-300 animate-shake"
+              onClick={() =>
+                window.open("https://github.com/jirapatthp", "_blank")
+              }
+              className="w-40 h-40 hover:scale-[1.1] duration-300"
             />
-          <span className="text-3xl font-bold  bg-[url('https://i.pinimg.com/1200x/24/05/5f/24055f957d15bc1868e03d078ec6fbe4.jpg')] bg-blur-sm rounded-full">github</span>
+            <span className="text-3xl font-bold  bg-[url('https://i.pinimg.com/1200x/24/05/5f/24055f957d15bc1868e03d078ec6fbe4.jpg')] bg-blur-sm rounded-full">
+              github
+            </span>
           </div>
         </div>
       </div>
       <div className="flex flex-col items-center gap-40 ">
-        <div className="text-center">
+        <div className="text-center  animate-shake">
           <img
             src={LinkinLogo}
             alt=""
-            className="w-50 h-40 mt-20 hover:scale-[1.1] duration-300  animate-shake"
+            onClick={() =>
+              window.open(
+                "https://www.linkedin.com/in/jirapat-thepsurin-52245938a/",
+                "_blank"
+              )
+            }
+            className="w-50 h-40 mt-20 hover:scale-[1.1] duration-300"
           />
-          <span className="text-3xl font-bold  bg-[url('https://i.pinimg.com/736x/4d/c5/04/4dc5049da6ec5881c934f9f34003acba.jpg')] bg-blur-sm rounded-full">Linkin</span>
+          <span className="text-3xl font-bold  bg-[url('https://i.pinimg.com/736x/4d/c5/04/4dc5049da6ec5881c934f9f34003acba.jpg')] bg-blur-sm rounded-full">
+            Linkin
+          </span>
         </div>
         <div>
           <img
@@ -73,7 +97,7 @@ const Home = () => {
           src={BlogLogo}
           alt=""
           onClick={toggleSidebar}
-          className="h-40 hover:scale-[1.1] duration-300 animate-shake"
+          className="h-40 hover:scale-[1.1] duration-300 animate-shake hover:cursor-pointer"
         />
 
         {/* 💫 แสดง sidebar เมื่อเปิด */}
@@ -100,17 +124,18 @@ const Home = () => {
                 </button> */}
 
                 <ul
-                  className="font-bold text-3xl flex flex-col  
+                  className="font-bold text-3xl flex flex-col
                 items-center gap-30"
                 >
-                  <li className="hover:scale-[1.1] duration-300 cursor-pointer">
+                  <li className="hover:scale-[1.1] duration-300 cursor-pointer"
+                  onClick={()=> navigate("/aboutme")}>
                     About me{" "}
                   </li>
                   <li className="hover:scale-[1.1] duration-300 cursor-pointer">
                     Skills{" "}
                   </li>
                   <li className="hover:scale-[1.1] duration-300 cursor-pointer">
-                    Project{" "}
+                    Projects{" "}
                   </li>
                   <li className="hover:scale-[1.1] duration-300 cursor-pointer">
                     Work Expreriend{" "}

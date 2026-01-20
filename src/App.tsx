@@ -1,10 +1,9 @@
 import "./App.css";
-import Home from "./page/Home";
+import Home from "./pages/Home";
 import CursorIcon from "./assets/yellow.png";
+import AboutMe from "./pages/AboutMe";
 
 function App() {
-
-
   return (
     <div
       style={{
@@ -12,6 +11,7 @@ function App() {
       }}
       className="min-h-screen"
     >
+      <AboutMe/>
       <Home />
     </div>
   );
