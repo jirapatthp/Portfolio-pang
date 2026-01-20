@@ -1,39 +1,31 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { menuItems } from "../config/menu";
+import HomeLogo from "../assets/home-logo.png";
 
 const NavBar = () => {
-  const navigate = useNavigate();
   return (
-    <div className="bg-amber-100">
-      <ul
-        className="font-bold text-[24px] flex flex-row  justify-evenly
-                 gap-4"
-      >
-        <li
-          className="hover:scale-[1.1] duration-300 cursor-pointer"
-          onClick={() => navigate("/")}
-        >
-          Home{" "}
-        </li>
-
-        <li className="hover:scale-[1.1] duration-300 cursor-pointer">
-          <Link to="/aboutme">
-          About me{" "}
-          </Link>
-        </li>
-        <li className="hover:scale-[1.1] duration-300 cursor-pointer">
-          Skills{" "}
-        
-        </li>
-        <li className="hover:scale-[1.1] duration-300 cursor-pointer">
-          <Link to="/projects">
-          Projects{" "}
-          </Link>
-        </li>
-        <li className="hover:scale-[1.1] duration-300 cursor-pointer">
-          Work Expreriend{" "}
-        </li>
+    <nav className="bg-amber-100 font-rasal">
+      <ul className="font-bold text-[24px] flex justify-evenly gap-4 py-4 items-center">
+        {menuItems.map((item) => (
+          <li
+            key={item.path}
+            className="hover:scale-[1.1] duration-300"
+          >
+            {item.path === "/" ? (
+              <Link to={item.path}>
+                <img
+                  src={HomeLogo}
+                  alt="Home"
+                  className="h-20 w-auto hover:scale-[1.1] duration-300 animate-shake "
+                />
+              </Link>
+            ) : (
+              <Link to={item.path}>{item.label}</Link>
+            )}
+          </li>
+        ))}
       </ul>
-    </div>
+    </nav>
   );
 };
 

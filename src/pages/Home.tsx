@@ -8,36 +8,51 @@ import { AnimatePresence, motion } from "motion/react";
 import CursorDot from "../assets/dot.png";
 import { useNavigate } from "react-router-dom";
 
-
-
+import { menuItems } from "../config/menu";
+import { useEffect } from "react";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const [isPlaying, setIsPlaying] = useState(false);
   const handleClick = () => {
-    setIsPlaying(true);
-    setIsPlaying(!isPlaying);
-  };
+  setIsPlaying((prev) => !prev);
+};
+
 
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => setIsOpen(!isOpen);
 
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
   return (
-    <div style={{
-        cursor: `url(${CursorDot}), auto`,
-      } }
-    className="grid grid-cols-3 gap-14 min-h-screen bg-[url('/src/assets/bg.svg')] bg-cover bg-center">
+    <div
+  style={{ cursor: `url(${CursorDot}), auto` }}
+  className="font-rasal grid grid-cols-3 gap-14 h-screen overflow-hidden
+             bg-[url('/src/assets/bg.svg')] bg-cover bg-center"
+>
+
       <div>
         <div className="flex flex-col items-end justify-evenly gap-50 pt-20">
           <div className="text-center  animate-shake">
             <img
               src={ContactLogo}
               alt=""
+              onClick={() =>
+                window.open(
+                  "https://drive.google.com/file/d/14A90fQMVvkctwtlOYTqH8T0iaPbyUpsa/view?usp=sharing",
+                  "_blank",
+                )
+              }
               className="w-40 h-40 hover:scale-[1.1] duration-300"
             />
             <span className="text-3xl font-bold  bg-[url('https://i.pinimg.com/736x/48/66/08/48660831b6bedf3e1e1b6103409197b0.jpg')] bg-blur-sm rounded-full">
-              contact
+              resume
             </span>
           </div>
           <div className="text-center animate-shake">
@@ -63,7 +78,7 @@ const Home: React.FC = () => {
             onClick={() =>
               window.open(
                 "https://www.linkedin.com/in/jirapat-thepsurin-52245938a/",
-                "_blank"
+                "_blank",
               )
             }
             className="w-50 h-40 mt-20 hover:scale-[1.1] duration-300"
@@ -125,21 +140,20 @@ const Home: React.FC = () => {
 
                 <ul
                   className="font-bold text-3xl flex flex-col
-                items-center gap-30"
+             items-center gap-30"
                 >
-                  <li className="hover:scale-[1.1] duration-300 cursor-pointer"
-                  onClick={()=> navigate("/aboutme")}>
-                    About me{" "}
-                  </li>
-                  <li className="hover:scale-[1.1] duration-300 cursor-pointer">
-                    Skills{" "}
-                  </li>
-                  <li className="hover:scale-[1.1] duration-300 cursor-pointer">
-                    Projects{" "}
-                  </li>
-                  <li className="hover:scale-[1.1] duration-300 cursor-pointer">
-                    Work Expreriend{" "}
-                  </li>
+                  {menuItems.map((item) => (
+                    <li
+                      key={item.path}
+                      className="hover:scale-[1.1] duration-300 cursor-pointer"
+                      onClick={() => {
+                        navigate(item.path);
+                        setIsOpen(false); // 👈 ปิด sidebar หลังคลิก
+                      }}
+                    >
+                      {item.label}
+                    </li>
+                  ))}
                 </ul>
               </motion.div>
             </>
