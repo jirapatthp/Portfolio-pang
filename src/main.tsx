@@ -1,10 +1,10 @@
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home.tsx";
-import AboutMe from "./pages/AboutMe.tsx";
-import { Layout } from "./pages/Layout.tsx";
-import Projects from "./pages/Projects.tsx";
+
+import Home from "./pages/Home";
+import AboutMe from "./pages/AboutMe";
+import { Layout } from "./pages/Layout";
+import Projects from "./pages/Projects";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +19,5 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")!).render(
-  <RouterProvider router={router}>
-    <App />
-  </RouterProvider>
+  <RouterProvider router={router} />
 );
