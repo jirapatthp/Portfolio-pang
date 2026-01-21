@@ -1,67 +1,69 @@
 const AboutMe = () => {
   return (
-    <section className="min-h-screen px-8 py-16 bg-[#FFF9ED]">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-10 text-center">
-          About Me
-        </h1>
+    <section
+      className="relative min-h-screen px-8 py-16 bg-cover bg-center"
+      style={{
+        backgroundImage:
+          "url('https://i.pinimg.com/736x/56/42/01/564201b4e34df7a461ab68430608067d.jpg')",
+      }}
+    >
+      <h1 className="text-4xl font-bold text-center mb-16 font-rasal">
+        About Me
+      </h1>
 
-        {/* Intro */}
-        <div className="bg-white rounded-2xl p-8 shadow-md mb-10">
-          <p className="text-lg leading-relaxed opacity-90">
-            I am a Junior Software Developer with a background in operations and
-            digital commerce. My experience working closely with business teams
-            has shaped the way I approach software development — focusing on
-            solving real problems and building practical solutions.
-          </p>
-
-          <p className="text-lg leading-relaxed opacity-90 mt-4">
-            I recently completed the Generation Thailand Software Developer
-            Bootcamp, where I gained hands-on experience building full-stack web
-            applications using modern technologies such as React, Node.js, and
-            MongoDB.
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {/* Card 1 */}
+        <div
+          className="bg-white rounded-2xl p-6 shadow-md
+                     hover:shadow-lg hover:-translate-y-1
+                     transition duration-300"
+        >
+          <h2 className="text-xl font-bold mb-2">👋 Hi, I’m Pang</h2>
+          <p className="text-sm opacity-85 leading-relaxed">
+            A Junior Software Developer who enjoys turning ideas, messy
+            requirements, and business needs into simple and friendly web
+            experiences.
           </p>
         </div>
 
-        {/* Mindset */}
-        <div className="bg-white rounded-2xl p-8 shadow-md mb-10">
-          <h2 className="text-2xl font-bold mb-4">
-            How I Think & Work
-          </h2>
-
-          <ul className="list-disc pl-5 space-y-3 text-base opacity-85">
-            <li>
-              I focus on understanding the problem before jumping into code.
-            </li>
-            <li>
-              I enjoy breaking down complex requirements into small,
-              manageable steps.
-            </li>
-            <li>
-              I value clean code, clear communication, and continuous learning.
-            </li>
-          </ul>
+        {/* Card 2 */}
+        <div
+          className="bg-white rounded-2xl p-6 shadow-md
+                     hover:shadow-lg hover:-translate-y-1
+                     transition duration-300"
+        >
+          <h2 className="text-xl font-bold mb-2">💼 Where I Come From</h2>
+          <p className="text-sm opacity-85 leading-relaxed">
+            I started my career in operations and digital commerce. Working
+            close to real users taught me that good software should solve
+            problems — not create new ones.
+          </p>
         </div>
 
-        {/* Strength */}
-        <div className="bg-white rounded-2xl p-8 shadow-md">
-          <h2 className="text-2xl font-bold mb-4">
-            What I Bring to a Team
-          </h2>
+        {/* Card 3 */}
+        <div
+          className="bg-white rounded-2xl p-6 shadow-md
+                     hover:shadow-lg hover:-translate-y-1
+                     transition duration-300"
+        >
+          <h2 className="text-xl font-bold mb-2">🧠 How I Think</h2>
+          <p className="text-sm opacity-85 leading-relaxed">
+            Before writing code, I like to slow down, understand the problem,
+            and break it into small, clear steps that actually make sense.
+          </p>
+        </div>
 
-          <ul className="list-disc pl-5 space-y-3 text-base opacity-85">
-            <li>
-              Strong ability to translate business requirements into technical
-              solutions.
-            </li>
-            <li>
-              Experience collaborating in team environments using Git and
-              GitHub.
-            </li>
-            <li>
-              A growth mindset and eagerness to improve as a developer.
-            </li>
-          </ul>
+        {/* Card 4 */}
+        <div
+          className="bg-white rounded-2xl p-6 shadow-md
+                     hover:shadow-lg hover:-translate-y-1
+                     transition duration-300"
+        >
+          <h2 className="text-xl font-bold mb-2">✨ What I Care About</h2>
+          <p className="text-sm opacity-85 leading-relaxed">
+            Clean UI, readable code, and building things that people feel
+            comfortable using — even if they don’t know anything about tech.
+          </p>
         </div>
       </div>
     </section>

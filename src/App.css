@@ -5,6 +5,19 @@
 
 @import "tailwindcss";
 
+/* 🌿 Default Apple-like font */
+body {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+/* 🎀 Decorative font */
 .font-rasal {
   font-family: "Rasal", sans-serif;
 }

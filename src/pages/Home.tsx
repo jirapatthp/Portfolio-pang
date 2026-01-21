@@ -15,9 +15,8 @@ const Home: React.FC = () => {
   const navigate = useNavigate();
   const [isPlaying, setIsPlaying] = useState(false);
   const handleClick = () => {
-  setIsPlaying((prev) => !prev);
-};
-
+    setIsPlaying((prev) => !prev);
+  };
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -32,11 +31,10 @@ const Home: React.FC = () => {
 
   return (
     <div
-  style={{ cursor: `url(${CursorDot}), auto` }}
-  className="font-rasal grid grid-cols-3 gap-14 h-screen overflow-hidden
+      style={{ cursor: `url(${CursorDot}), auto` }}
+      className="font-rasal grid grid-cols-3 gap-14 h-screen overflow-hidden
              bg-[url('/src/assets/bg.svg')] bg-cover bg-center"
->
-
+    >
       <div>
         <div className="flex flex-col items-end justify-evenly gap-50 pt-20">
           <div className="text-center  animate-shake">
@@ -131,13 +129,6 @@ const Home: React.FC = () => {
                 transition={{ type: "spring", stiffness: 80, damping: 12 }}
                 className="fixed top-0 right-0 h-full w-100 bg-[url('https://i.pinimg.com/736x/d2/9e/a5/d29ea58777cedeff3e4349a723db1b54.jpg')] shadow-lg p-6 z-50 flex flex-col justify-center"
               >
-                {/* <button
-                  onClick={toggleSidebar}
-                  className="text-gray-500 hover:text-gray-800 mb-4"
-                >
-                  ✖ Close
-                </button> */}
-
                 <ul
                   className="font-bold text-3xl flex flex-col
              items-center gap-30"

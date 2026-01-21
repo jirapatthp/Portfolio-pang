@@ -4,13 +4,16 @@ import HomeLogo from "../assets/home-logo.png";
 
 const NavBar = () => {
   return (
-    <nav className="bg-amber-100 font-rasal">
+    <nav
+      className="relative  px-8  bg-cover bg-center font-rasal"
+      style={{
+        backgroundImage:
+          "url('https://i.pinimg.com/736x/08/ca/ea/08caeaaf9403d3f72281c246c1692446.jpg')",
+      }}
+    >
       <ul className="font-bold text-[24px] flex justify-evenly gap-4 py-4 items-center">
         {menuItems.map((item) => (
-          <li
-            key={item.path}
-            className="hover:scale-[1.1] duration-300"
-          >
+          <li key={item.path} className="hover:scale-[1.1] duration-300">
             {item.path === "/" ? (
               <Link to={item.path}>
                 <img

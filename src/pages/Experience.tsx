@@ -19,7 +19,7 @@ const experiences: ExperienceItem[] = [
   {
     role: "Operations & Digital Commerce",
     company: "Maytiplaspack Co., Ltd.",
-    period: "2022 – 2024",
+    period: "2020 – 2024",
     description: [
       "Managed online sales operations and digital commerce platforms",
       "Coordinated between sales, warehouse, and production teams",
@@ -30,10 +30,14 @@ const experiences: ExperienceItem[] = [
 
 const Experience = () => {
   return (
-    <section className="min-h-screen px-8 py-16 bg-[#FFF9ED]">
-      <h1 className="text-4xl font-bold mb-12 text-center">
-        Work Experience
-      </h1>
+    <section
+      className="relative min-h-screen px-8 py-16 bg-cover bg-center"
+      style={{
+        backgroundImage:
+          "url('https://i.pinimg.com/1200x/04/fd/05/04fd0535778bd8e58684710941244f70.jpg')",
+      }}
+    >
+      <h1 className="text-4xl font-bold mb-12 text-center">Work Experience</h1>
 
       <div className="max-w-4xl mx-auto space-y-8">
         {experiences.map((exp, index) => (
@@ -44,14 +48,10 @@ const Experience = () => {
           >
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
               <div>
-                <h2 className="text-xl font-bold">
-                  {exp.role}
-                </h2>
-                <p className="text-sm opacity-70">
-                  {exp.company}
-                </p>
+                <h2 className="text-xl font-bold">{exp.role}</h2>
+                <p className="text-sm opacity-70">{exp.company}</p>
               </div>
-              <span className="text-sm font-medium text-amber-600">
+              <span className="text-sm font-medium text-red-800">
                 {exp.period}
               </span>
             </div>
