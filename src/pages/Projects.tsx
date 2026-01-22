@@ -6,6 +6,9 @@ import PetClothing from "../assets/projects/pet-clothing.png";
 import RollingBirthdayPoster from "../assets/projects/rolling-birthday.png";
 import RollingBirthdayVideo from "../assets/projects/rolling-birthday.mp4";
 
+import WeatherAppPoster from "../assets/projects/WeatherApp.png";
+import WeatherAppVideo from "../assets/projects/weather-web.mp4";
+
 type Project = {
   title: string;
   image: string; // fallback image
@@ -23,15 +26,25 @@ const projects: Project[] = [
     video: RollingBirthdayVideo,
     description: "A playful interactive birthday web experience",
     tech: "React, JavaScript",
-    tags: ["🎉 Creative", "🎨 Frontend"],
+    tags: ["🎀☆ Creative", "🐴 Frontend"],
     link: "https://rolling-birthday.vercel.app/",
   },
+  {
+    title: "Weather App",
+    image: WeatherAppPoster,
+    video: WeatherAppVideo,
+    description: "A simple weather app using OpenWeatherMap API",
+    tech: "HTML, CSS, JavaScript",
+    tags: ["☁️ API", "📡 Fetch", "🐴 Frontend"],
+    link: "https://your-weather-app-url.com", // หรือ GitHub Pages
+  },
+
   {
     title: "Comb Counter",
     image: CombCounter,
     description: "A cute e-commerce experiment for lifestyle goods",
     tech: "MERN Stack",
-    tags: ["✨ Featured", "🐢 Personal", "🍃 MongoDB"],
+    tags: ["☆ Featured", "🥚 Personal", "🥭 MongoDB"],
     link: "https://comb-counter.vercel.app/",
   },
   {
@@ -39,7 +52,7 @@ const projects: Project[] = [
     image: PetClothing,
     description: "Team-built e-commerce platform with real workflow",
     tech: "MERN Stack",
-    tags: ["🤝 Team Project", "🍃 MongoDB"],
+    tags: ["🏠 Team Project", "🥭 MongoDB"],
     link: "https://github.com/jirapaththp/pet-clothing",
   },
 ];
@@ -47,7 +60,7 @@ const projects: Project[] = [
 const Projects = () => {
   return (
     <section
-      className="relative min-h-screen px-8 py-16 bg-cover bg-center"
+      className="relative min-h-screen px-8 py-16 bg-cover bg-center "
       style={{
         backgroundImage:
           "url('https://i.pinimg.com/736x/73/38/04/733804cae53588e6add14f92ffef4a33.jpg')",
@@ -111,7 +124,9 @@ const Projects = () => {
               <div className="p-5">
                 <h2 className="text-xl font-bold mb-1">{project.title}</h2>
 
-                <p className="text-sm opacity-70 mb-3 ">{project.description}</p>
+                <p className="text-sm opacity-70 mb-3 ">
+                  {project.description}
+                </p>
 
                 <div className="flex flex-wrap gap-2 mb-3">
                   {project.tags.map((tag) => (
